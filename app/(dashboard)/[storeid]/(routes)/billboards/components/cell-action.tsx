@@ -34,7 +34,7 @@ export const CellAction: React.FC<CellActionProps> = ({
           setOpen(false);
           setLoading(false);
         }
-      };
+    };
 
     const onCopy = (id: string) => {
         navigator.clipboard.writeText(id)
