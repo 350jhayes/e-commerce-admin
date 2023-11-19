@@ -25,8 +25,8 @@ export default function RootLayout({
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             <ToastProvider />
             <ModalProvider />
+            {children}
           </ThemeProvider>
-          {children}
         </body>
       </html>
     </ClerkProvider>
