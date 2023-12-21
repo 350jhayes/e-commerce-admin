@@ -89,10 +89,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const onSubmit = async (data: ProductFormValues) => {
     try {
       setLoading(true);
+      console.log('Product Data:', data);
       if (initialData) {
-        await axios.patch(`/api/${params.storeId}/products/${params.productId}`, data);
+        const response = await axios.patch(`/api/${params.storeId}/products/${params.productId}`, data);
+        console.log('Update Response:', response.data);
       } else {
-        await axios.post(`/api/${params.storeId}/products`, data);
+        const response = await axios.post(`/api/${params.storeId}/products`, data);
+        console.log('Create Response:', response.data);
       }
       router.refresh();
       router.push(`/${params.storeId}/products`);
